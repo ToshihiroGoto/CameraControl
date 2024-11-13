@@ -25,6 +25,11 @@ struct ContentView: View {
                         ),
                     captureModel: captureModel
                 )
+                .onCameraCaptureEvent() { event in
+                    if event.phase == .began {
+                        captureModel.takePhoto()
+                    }
+                }
             }
             VStack {
                 Spacer()

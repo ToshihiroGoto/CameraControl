@@ -17,14 +17,6 @@ public struct CameraPreview: UIViewRepresentable {
         let view = UICameraPreview(frame: previewFrame, session: self.captureModel.captureSession)
         view.setupPreview(previewSize: previewFrame)
 
-        // カメラコントロール & 音量ボタンで撮影する
-        let interaction = AVCaptureEventInteraction { event in
-            if event.phase == .began {
-                self.captureModel.takePhoto()
-            }
-        }
-        view.addInteraction(interaction)
-
         return view
     }
     
