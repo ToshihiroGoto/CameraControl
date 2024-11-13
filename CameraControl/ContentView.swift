@@ -10,8 +10,6 @@ import SwiftUI
 struct ContentView: View {
     let captureModel: CaptureModel = .init()
     
-    @State private var isInteractionEnabled = true
-    
     var body: some View {
         ZStack {
             GeometryReader { geom in
