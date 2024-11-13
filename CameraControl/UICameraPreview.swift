@@ -29,7 +29,9 @@ public class UICameraPreview: UIView {
         self.previewLayer.frame = self.bounds
         self.layer.addSublayer(previewLayer)
         
-        self.captureSession.startRunning()
+        DispatchQueue.global(qos: .background).async {
+            self.captureSession.startRunning()
+        }
     }
     
     func updateFrame(frame: CGRect) {
